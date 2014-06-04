@@ -10,4 +10,9 @@
 
 @implementation Student
 
+- (NSString *)getLastCommaFirst
+{
+    return [NSString stringWithFormat:@"%@,%@",self.lastName,self.firstName];
+}
+
 @end

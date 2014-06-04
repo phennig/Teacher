@@ -9,5 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface Student : NSObject
+@property NSString *firstName;
+@property NSString *lastName;
+@property NSInteger *studentID;
+
+- (NSString *)getLastCommaFirst;
 
 @end

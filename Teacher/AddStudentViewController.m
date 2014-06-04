@@ -7,12 +7,13 @@
 //
 
 #import "AddStudentViewController.h"
+#import "Student.h"
 
 @interface AddStudentViewController ()
-//@property (weak, nonatomic)
-//@property (weak, nonatomic) IBOutlet UITableView *myTableView;
-//@property (weak, nonatomic) IBOutlet UILabel *newStudent
-//@property (weak, nonatomic) IBOutlet UILabel *currentStudent
+@property (strong, nonatomic) IBOutlet UITextField *newStudentFirstNameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *newStudentLastNameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *newStudentIDTextField;
+@property (strong, nonatomic) IBOutlet UITextField *courseTextField;
 
 @end
 
@@ -21,7 +22,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+}
+
+- (IBAction)onAddButtonPressed:(id)sender
+{
+
+    NSString *first = self.newStudentFirstNameTextField.text;
+    NSString *last = self.newStudentLastNameTextField.text;
+    NSNumber *ID = self.newStudentIDTextField;
+
+    //Student *newStudent = [[Student alloc] initWithFirstName: first LastName: last ID: ID];
+
 }
 
 @end

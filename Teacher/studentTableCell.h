@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface studentTableCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UITextField *assignmentTextField;
 
 @end

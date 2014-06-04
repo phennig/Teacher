@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "studentTableCell.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate, UITabBarDelegate, UITabBarControllerDelegate>
 
@@ -32,10 +33,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StudentCellID" forIndexPath:indexPath];
+    studentTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StudentCellID" forIndexPath:indexPath];
 
     cell.textLabel.text = @"Name will be here";
     cell.detailTextLabel.text = @"Current Grade";
+    cell.assignmentTextField.text = @"10";
     return cell;
 }
 

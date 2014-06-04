@@ -9,7 +9,7 @@
 #import "studentTableCell.h"
 
 @interface studentTableCell ()
-@property (weak, nonatomic) IBOutlet UITextField *gradeTextField;
+
 
 @end
 

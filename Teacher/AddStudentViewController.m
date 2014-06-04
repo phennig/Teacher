@@ -29,7 +29,8 @@
 
     NSString *first = self.newStudentFirstNameTextField.text;
     NSString *last = self.newStudentLastNameTextField.text;
-    NSNumber *ID = self.newStudentIDTextField;
+    NSString *temp = self.newStudentIDTextField.text;
+    //NSNumber *ID = [temp integerValue];
 
     //Student *newStudent = [[Student alloc] initWithFirstName: first LastName: last ID: ID];
 

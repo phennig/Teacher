@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0B1E6B193F78A5003754D7 /* AddStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B1E6A193F78A5003754D7 /* AddStudentViewController.m */; };
 		58B3AC81193EA6660015AA9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B3AC80193EA6660015AA9F /* Foundation.framework */; };
 		58B3AC83193EA6660015AA9F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B3AC82193EA6660015AA9F /* CoreGraphics.framework */; };
 		58B3AC85193EA6660015AA9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B3AC84193EA6660015AA9F /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E0B1E69193F78A5003754D7 /* AddStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentViewController.h; sourceTree = "<group>"; };
+		2E0B1E6A193F78A5003754D7 /* AddStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentViewController.m; sourceTree = "<group>"; };
 		58B3AC7D193EA6660015AA9F /* Teacher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teacher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B3AC80193EA6660015AA9F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58B3AC82193EA6660015AA9F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,6 +120,8 @@
 				58B3AC92193EA6660015AA9F /* Main.storyboard */,
 				58B3AC95193EA6660015AA9F /* ViewController.h */,
 				58B3AC96193EA6660015AA9F /* ViewController.m */,
+				2E0B1E69193F78A5003754D7 /* AddStudentViewController.h */,
+				2E0B1E6A193F78A5003754D7 /* AddStudentViewController.m */,
 				58B3AC98193EA6660015AA9F /* Images.xcassets */,
 				58B3AC87193EA6660015AA9F /* Supporting Files */,
 			);
@@ -249,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E0B1E6B193F78A5003754D7 /* AddStudentViewController.m in Sources */,
 				58B3AC97193EA6660015AA9F /* ViewController.m in Sources */,
 				58B3AC91193EA6660015AA9F /* AppDelegate.m in Sources */,
 				58B3AC8D193EA6660015AA9F /* main.m in Sources */,
@@ -460,6 +466,7 @@
 				58B3ACB1193EA6660015AA9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		58B3ACB2193EA6660015AA9F /* Build configuration list for PBXNativeTarget "TeacherTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +475,7 @@
 				58B3ACB4193EA6660015AA9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

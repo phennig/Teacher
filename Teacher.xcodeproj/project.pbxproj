@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47D92FFB193F769E004DBD85 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D92FFA193F769E004DBD85 /* Student.m */; };
+		47D92FFE193F77E4004DBD85 /* Assignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D92FFD193F77E4004DBD85 /* Assignment.m */; };
+		47D93001193F795B004DBD85 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D93000193F795A004DBD85 /* Course.m */; };
 		58B3AC81193EA6660015AA9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B3AC80193EA6660015AA9F /* Foundation.framework */; };
 		58B3AC83193EA6660015AA9F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B3AC82193EA6660015AA9F /* CoreGraphics.framework */; };
 		58B3AC85193EA6660015AA9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B3AC84193EA6660015AA9F /* UIKit.framework */; };
@@ -34,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47D92FF9193F769E004DBD85 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		47D92FFA193F769E004DBD85 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		47D92FFC193F77E4004DBD85 /* Assignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Assignment.h; sourceTree = "<group>"; };
+		47D92FFD193F77E4004DBD85 /* Assignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Assignment.m; sourceTree = "<group>"; };
+		47D92FFF193F795A004DBD85 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		47D93000193F795A004DBD85 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		58B3AC7D193EA6660015AA9F /* Teacher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teacher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B3AC80193EA6660015AA9F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58B3AC82193EA6660015AA9F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -119,6 +128,12 @@
 				58B3AC96193EA6660015AA9F /* ViewController.m */,
 				58B3AC98193EA6660015AA9F /* Images.xcassets */,
 				58B3AC87193EA6660015AA9F /* Supporting Files */,
+				47D92FF9193F769E004DBD85 /* Student.h */,
+				47D92FFA193F769E004DBD85 /* Student.m */,
+				47D92FFC193F77E4004DBD85 /* Assignment.h */,
+				47D92FFD193F77E4004DBD85 /* Assignment.m */,
+				47D92FFF193F795A004DBD85 /* Course.h */,
+				47D93000193F795A004DBD85 /* Course.m */,
 			);
 			path = Teacher;
 			sourceTree = "<group>";
@@ -252,6 +267,9 @@
 				58B3AC97193EA6660015AA9F /* ViewController.m in Sources */,
 				58B3AC91193EA6660015AA9F /* AppDelegate.m in Sources */,
 				58B3AC8D193EA6660015AA9F /* main.m in Sources */,
+				47D92FFE193F77E4004DBD85 /* Assignment.m in Sources */,
+				47D93001193F795B004DBD85 /* Course.m in Sources */,
+				47D92FFB193F769E004DBD85 /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +478,7 @@
 				58B3ACB1193EA6660015AA9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		58B3ACB2193EA6660015AA9F /* Build configuration list for PBXNativeTarget "TeacherTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +487,7 @@
 				58B3ACB4193EA6660015AA9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

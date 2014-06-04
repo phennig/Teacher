@@ -11,6 +11,9 @@
 @interface AddStudentViewController ()
 //@property (weak, nonatomic)
 //@property (weak, nonatomic) IBOutlet UITableView *myTableView;
+//@property (weak, nonatomic) IBOutlet UILabel *newStudent
+//@property (weak, nonatomic) IBOutlet UILabel *currentStudent
+
 
 
 

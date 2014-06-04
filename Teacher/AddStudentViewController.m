@@ -14,21 +14,14 @@
 //@property (weak, nonatomic) IBOutlet UILabel *newStudent
 //@property (weak, nonatomic) IBOutlet UILabel *currentStudent
 
-
-
-
 @end
 
 @implementation AddStudentViewController
-
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
-
 
 @end

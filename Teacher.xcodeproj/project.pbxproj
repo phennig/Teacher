@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2E0B1E6B193F78A5003754D7 /* AddStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B1E6A193F78A5003754D7 /* AddStudentViewController.m */; };
 		477BFAF2193FB67F0086E8CA /* Grade.m in Sources */ = {isa = PBXBuildFile; fileRef = 477BFAF1193FB67F0086E8CA /* Grade.m */; };
+		477EB3A51940998900E7945A /* Persist.m in Sources */ = {isa = PBXBuildFile; fileRef = 477EB3A41940998900E7945A /* Persist.m */; };
 		47D92FFB193F769E004DBD85 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D92FFA193F769E004DBD85 /* Student.m */; };
 		47D92FFE193F77E4004DBD85 /* Assignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D92FFD193F77E4004DBD85 /* Assignment.m */; };
 		47D93001193F795B004DBD85 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D93000193F795A004DBD85 /* Course.m */; };
@@ -44,6 +45,8 @@
 		2E0B1E6A193F78A5003754D7 /* AddStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentViewController.m; sourceTree = "<group>"; };
 		477BFAF0193FB67F0086E8CA /* Grade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grade.h; sourceTree = "<group>"; };
 		477BFAF1193FB67F0086E8CA /* Grade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grade.m; sourceTree = "<group>"; };
+		477EB3A31940998900E7945A /* Persist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Persist.h; sourceTree = "<group>"; };
+		477EB3A41940998900E7945A /* Persist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Persist.m; sourceTree = "<group>"; };
 		47D92FF9193F769E004DBD85 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		47D92FFA193F769E004DBD85 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		47D92FFC193F77E4004DBD85 /* Assignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Assignment.h; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 		58B3AC86193EA6660015AA9F /* Teacher */ = {
 			isa = PBXGroup;
 			children = (
+				477EB3A31940998900E7945A /* Persist.h */,
+				477EB3A41940998900E7945A /* Persist.m */,
 				58B3AC8F193EA6660015AA9F /* AppDelegate.h */,
 				58B3AC90193EA6660015AA9F /* AppDelegate.m */,
 				58B3AC92193EA6660015AA9F /* Main.storyboard */,
@@ -285,6 +290,7 @@
 				58B3AC8D193EA6660015AA9F /* main.m in Sources */,
 				58165A76193F9AE300B7DF10 /* studentTableCell.m in Sources */,
 				47D92FFE193F77E4004DBD85 /* Assignment.m in Sources */,
+				477EB3A51940998900E7945A /* Persist.m in Sources */,
 				477BFAF2193FB67F0086E8CA /* Grade.m in Sources */,
 				47D93001193F795B004DBD85 /* Course.m in Sources */,
 				47D92FFB193F769E004DBD85 /* Student.m in Sources */,

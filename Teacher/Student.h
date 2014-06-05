@@ -14,6 +14,8 @@
 @property NSString *studentID;
 
 - (Student *)initWithFirstName:(NSString *)first LastName:(NSString *)last ID:(NSString *)studentID;
+- (Student *)initWithDictionary:(NSDictionary *)dictionary;
 - (NSString *)getLastCommaFirstandID;
+- (NSDictionary *)getDictionaryVersion;
 
 @end

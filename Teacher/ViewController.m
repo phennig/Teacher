@@ -12,12 +12,16 @@
 //#import "AddAssignmentViewController.h"
 #import "Student.h"
 #import "Course.h"
+#import "Persist.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *assignmentTextField;
 @property Course *currentCourse;
 @property NSMutableArray *students;
+@property NSMutableArray *courses;
+@property NSMutableArray *assignments;
+@property NSMutableArray *grades;
 @end
 
 @implementation ViewController
@@ -25,8 +29,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.currentCourse = [[Course alloc] initWithName:@"Computer Programming" andSection:@"001"];
+    self.students = [Persist load:@"students.plist"];
+    self.courses = [Persist load:@"courses.plist"];
+    self.assignments = [Persist load:@"assignments.plist"];
+    self.grades = [Persist load:@"grades.plist"];
 
+    self.currentCourse = [[Course alloc] initWithName:@"Computer Programming" andSection:@"001"];
 }
 
 #pragma mark - Table View
@@ -46,11 +54,13 @@
     return cell;
 }
 
+#pragma mark - Unwinds From Segues
+
 - (IBAction)unwindFromNewStudentViewController:(UIStoryboardSegue *)segue
 {
     AddStudentViewController *previousViewController = segue.sourceViewController;
-    Student *nStudent = previousViewController.nStudent;
-    [self.currentCourse addStudentToCourse:nStudent];
+    Student *newStudent = previousViewController.nStudent;
+    [self.currentCourse addStudentToCourse:newStudent];
 }
 /*
 - (IBAction)unwindFromNewAssignmentViewController:(UIStoryboardSegue *)segue

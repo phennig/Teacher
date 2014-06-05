@@ -13,4 +13,8 @@
 @property NSString *studentID;
 @property NSString *assignmentID;
 @property NSString *grade;
+- (Grade *)initWithSection:(NSString *)section student:(NSString *)student assignment:(NSString *)assignment andGrade:(NSString *)grade;
+
+- (Grade *)initWithDictionary:(NSDictionary *)dictionary;
+- (NSDictionary *)getDictionaryVersion;
 @end

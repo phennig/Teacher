@@ -33,8 +33,8 @@
 - (NSDictionary *)getDictionaryVersion
 {
     NSDictionary *currentAssignment = [[NSDictionary alloc] initWithObjectsAndKeys: self.assignmentID,@"assignmentID",
-                                                                                    self.assignmentName,@"assignmentName",
-                                                                                    self.pointValue,@"pointValue", nil];
+        self.assignmentName,@"assignmentName",
+        self.pointValue,@"pointValue", nil];
     return currentAssignment;
 }
 

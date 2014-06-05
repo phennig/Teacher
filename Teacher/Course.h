@@ -20,6 +20,8 @@
 @property NSMutableArray *assignmentsInCourse;
 
 - (Course *)initWithName:(NSString *)name andSection:(NSString *)section;
+- (Course *)initWithDictionary:(NSDictionary *)dictionary;
 - (void)addStudentToCourse:(Student *)student;
 - (void)addAssignmentsToCourse:(Assignment *)assignment;
+- (NSDictionary *)getDictionaryVersion;
 @end

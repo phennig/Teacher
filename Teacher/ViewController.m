@@ -15,7 +15,6 @@
 #import "Persist.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
-
 @property (weak, nonatomic) IBOutlet UITextField *assignmentTextField;
 @property Course *currentCourse;
 @property NSMutableArray *students;

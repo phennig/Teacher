@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E00532919400E0400D28A8F /* AddAssignmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E00532819400E0400D28A8F /* AddAssignmentViewController.m */; };
 		2E0B1E6B193F78A5003754D7 /* AddStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B1E6A193F78A5003754D7 /* AddStudentViewController.m */; };
 		47D92FFB193F769E004DBD85 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D92FFA193F769E004DBD85 /* Student.m */; };
 		47D92FFE193F77E4004DBD85 /* Assignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D92FFD193F77E4004DBD85 /* Assignment.m */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E00532719400E0400D28A8F /* AddAssignmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAssignmentViewController.h; sourceTree = "<group>"; };
+		2E00532819400E0400D28A8F /* AddAssignmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAssignmentViewController.m; sourceTree = "<group>"; };
 		2E0B1E69193F78A5003754D7 /* AddStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentViewController.h; sourceTree = "<group>"; };
 		2E0B1E6A193F78A5003754D7 /* AddStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentViewController.m; sourceTree = "<group>"; };
 		47D92FF9193F769E004DBD85 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
@@ -131,6 +134,8 @@
 				58B3AC96193EA6660015AA9F /* ViewController.m */,
 				2E0B1E69193F78A5003754D7 /* AddStudentViewController.h */,
 				2E0B1E6A193F78A5003754D7 /* AddStudentViewController.m */,
+				2E00532719400E0400D28A8F /* AddAssignmentViewController.h */,
+				2E00532819400E0400D28A8F /* AddAssignmentViewController.m */,
 				58B3AC98193EA6660015AA9F /* Images.xcassets */,
 				58B3AC87193EA6660015AA9F /* Supporting Files */,
 				47D92FF9193F769E004DBD85 /* Student.h */,
@@ -270,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E0B1E6B193F78A5003754D7 /* AddStudentViewController.m in Sources */,
+				2E00532919400E0400D28A8F /* AddAssignmentViewController.m in Sources */,
 				58B3AC97193EA6660015AA9F /* ViewController.m in Sources */,
 				58B3AC91193EA6660015AA9F /* AppDelegate.m in Sources */,
 				58B3AC8D193EA6660015AA9F /* main.m in Sources */,

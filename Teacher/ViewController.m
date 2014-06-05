@@ -51,6 +51,8 @@
     [Persist saveArray:self.courses toFile:@"courses.plist"];
     [Persist saveArray:self.assignments toFile:@"assignments.plist"];
     [Persist saveArray:self.grades toFile:@"grades.plist"];
+
+    self.currentCourse = computerProgramming;
 }
 
 #pragma mark - Table View

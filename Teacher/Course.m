@@ -7,11 +7,12 @@
 //
 
 #import "Course.h"
+#import "Student.h"
+#import "Assignment.h"
 
 @interface Course ()
 
 @end
-
 
 @implementation Course
 
@@ -51,11 +52,26 @@
 
 - (NSDictionary *)getDictionaryVersion
 {
+    NSMutableArray *students = [[NSMutableArray alloc] init];
+    for(Student *currentStudent in self.studentsInCourse)
+    {
+      if( [currentStudent isKindOfClass:[Student class]] )
+         [students addObject:currentStudent.getDictionaryVersion];
+    }
+
+    NSMutableArray *assignments = [[NSMutableArray alloc] init];
+    for(Assignment *currentAssignment in self.assignmentsInCourse)
+    {
+        if( [currentAssignment isKindOfClass:[Assignment class]] )
+            [assignments addObject:currentAssignment.getDictionaryVersion];
+    }
+
     NSDictionary *currentDictionary = [[NSDictionary alloc] initWithObjectsAndKeys: self.sectionNumber,@"sectionID",
                                                                                     self.courseName,@"courseName",
                                                                                     self.MAX_NUMBER_OF_STUDENTS,@"maxStudents",
-                                                                                    self.assignmentsInCourse,@"assignments",
-                                                                                    self.studentsInCourse,@"students", nil];
+                                                                                    assignments,@"assignments",
+                                                                                    students,@"students", nil];
+    NSLog(@"%@",currentDictionary);
     return currentDictionary;
 }
 

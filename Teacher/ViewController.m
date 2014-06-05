@@ -42,10 +42,11 @@
     Course *computerProgramming = [[Course alloc] initWithName:@"Computer Programming" andSection:@"001"];
     [computerProgramming addStudentToCourse:bob];
     [computerProgramming addAssignmentsToCourse:quiz];
-    [self.courses addObject:computerProgramming];
+    [self.courses addObject:computerProgramming.getDictionaryVersion];
 
     Grade *grade1 = [[Grade alloc] initWithSection:computerProgramming.sectionNumber student:bob.studentID assignment:quiz.assignmentID andGrade:@"8"];
-    [self.grades addObject:grade1];
+    [self.grades addObject:grade1.getDictionaryVersion];
+
 
     [Persist saveArray:self.students toFile:@"students.plist"];
     [Persist saveArray:self.courses toFile:@"courses.plist"];

@@ -10,4 +10,13 @@
 
 @implementation Assignment
 
+- (Assignment *)initWithName:(NSString *)name andPoints:(NSNumber *)points
+{
+    self = [super init];
+    self.assignmentName = name;
+    self.pointValue = points;
+
+    return self;
+}
+
 @end

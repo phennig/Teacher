@@ -10,9 +10,20 @@
 
 @implementation Student
 
-- (NSString *)getLastCommaFirst
+- (Student *)initWithFirstName:(NSString *)first LastName:(NSString *)last ID:(NSString *)studentID
 {
-    return [NSString stringWithFormat:@"%@,%@",self.lastName,self.firstName];
+    self = [super init];
+    self.firstName = first;
+    self.lastName = last;
+    self.studentID = studentID;
+    return self;
 }
+
+
+- (NSString *)getLastCommaFirstandID
+{
+    return [NSString stringWithFormat:@"%@,%@   ID:%@",self.lastName,self.firstName,self.studentID];
+}
+
 
 @end

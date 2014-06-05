@@ -7,12 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Course.h"
+#import "Assignment.h"
 
 @interface Student : NSObject
 @property NSString *firstName;
 @property NSString *lastName;
-@property NSInteger *studentID;
+@property NSString *studentID;
 
-- (NSString *)getLastCommaFirst;
+- (Student *)initWithFirstName:(NSString *)first LastName:(NSString *)last ID:(NSString *)studentID;
+- (NSString *)getLastCommaFirstandID;
 
 @end

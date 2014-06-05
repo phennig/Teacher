@@ -9,11 +9,13 @@
 #import "AddAssignmentViewController.h"
 
 @interface AddAssignmentViewController ()
-@property (weak, nonatomic) UITextField *studentFirstNameTextField;
-@property (weak, nonatomic) UITextField *studentLastNameTextField;
-@property (weak, nonatomic) UITextField *studentIDTextField;
-@property (weak, nonatomic) UITextField *assignmentNameTextField;
-@property (weak, nonatomic) UITextField *pointValueTextField;
+
+@property (weak, nonatomic) IBOutlet UITextField *studentFirstNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *studentLastNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *studentIDTextField;
+@property (weak, nonatomic) IBOutlet UITextField *assignmentNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *pointValueTextField;
+
 
 @end
 
@@ -29,10 +31,6 @@
 - (IBAction)onAddButtonPressed:(id)sender
 {
 
-    NSString *name = self.assignmentNameTextField.text;
-    NSString *points = self.pointValueTextField;  //need to convert
-
-    //Assignment *newAssignment = [[Assignment alloc] initWithName: name points: points];
 }
 
 @end

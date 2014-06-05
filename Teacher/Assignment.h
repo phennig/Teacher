@@ -9,6 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface Assignment : NSObject
+
 @property NSString *assignmentName;
-@property NSInteger pointValue;
+@property NSString *pointValue;
+@property NSString *assignmentID;
+
+- (Assignment *)initWithName:(NSString *)name andPoints:(NSString *)points andID:(NSString *)ID;
+- (Assignment *)initWithDictionary:(NSDictionary *)dictionary;
+- (NSDictionary *)getDictionaryVersion;
+
 @end

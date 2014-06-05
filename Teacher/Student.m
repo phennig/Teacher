@@ -10,9 +10,36 @@
 
 @implementation Student
 
-- (NSString *)getLastCommaFirst
+- (Student *)initWithFirstName:(NSString *)first LastName:(NSString *)last ID:(NSString *)studentID
 {
-    return [NSString stringWithFormat:@"%@,%@",self.lastName,self.firstName];
+    self = [super init];
+    self.firstName = first;
+    self.lastName = last;
+    self.studentID = studentID;
+    return self;
 }
+
+- (Student *)initWithDictionary:(NSDictionary *)dictionary
+{
+    self.firstName = [dictionary objectForKey:@"firstName"];
+    self.lastName = [dictionary objectForKey:@"lastName"];
+    self.studentID = [dictionary objectForKey:@"studentID"];
+
+    return self;
+}
+
+- (NSString *)getLastCommaFirstandID
+{
+    return [NSString stringWithFormat:@"%@,%@   ID:%@",self.lastName,self.firstName,self.studentID];
+}
+
+- (NSDictionary *)getDictionaryVersion
+{
+    NSDictionary *currentStudent = [[NSDictionary alloc] initWithObjectsAndKeys:self.studentID,@"studentID",
+                                                                                self.lastName,@"lastName",
+                                                                                self.firstName,@"firstName", nil];
+    return currentStudent;
+}
+
 
 @end

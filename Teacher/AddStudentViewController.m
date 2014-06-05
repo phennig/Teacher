@@ -27,12 +27,6 @@
 - (IBAction)onAddButtonPressed:(id)sender
 {
 
-    NSString *first = self.nStudentFirstNameTextField.text;
-    NSString *last = self.nStudentLastNameTextField.text;
-    NSString *ID = self.nStudentIDTextField.text;  //need to convert
-
-    //Student *newStudent = [[Student alloc] initWithFirstName: first LastName: last ID: ID];
 }
-//hook button up to unwind
 
 @end

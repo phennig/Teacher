@@ -52,7 +52,8 @@
     cell.textLabel.text = student.lastName;
     cell.detailTextLabel.text = @"Current Grade";
     cell.assignmentTextField.text = @"10";
-    [cell getLast
+    //[cell
+
     return cell;
 }
 

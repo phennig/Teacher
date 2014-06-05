@@ -35,7 +35,7 @@
 {
     studentTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StudentCellID" forIndexPath:indexPath];
 
-    cell.textLabel.text = @"Name will be here";
+    cell.textLabel.text = @"Custom Class";
     cell.detailTextLabel.text = @"Current Grade";
     cell.assignmentTextField.text = @"10";
     return cell;

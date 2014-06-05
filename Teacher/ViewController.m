@@ -33,23 +33,40 @@
     self.assignments = [Persist load:@"assignments.plist"];
     self.grades = [Persist load:@"grades.plist"];
 
-    self.currentCourse = [[Course alloc] initWithName:@"Computer Programming" andSection:@"001"];
+    Student *bob = [[Student alloc] initWithFirstName:@"Bob" LastName:@"Brown" ID:@"1"];
+    [self.students addObject:bob.getDictionaryVersion];
+
+    Assignment *quiz = [[Assignment alloc] initWithName:@"Quiz 1" andPoints:@"10" andID:@"Q1"];
+    [self.assignments addObject:quiz.getDictionaryVersion];
+
+    Course *computerProgramming = [[Course alloc] initWithName:@"Computer Programming" andSection:@"001"];
+    [computerProgramming addStudentToCourse:bob];
+    [computerProgramming addAssignmentsToCourse:quiz];
+    [self.courses addObject:computerProgramming];
+
+    Grade *grade1 = [[Grade alloc] initWithSection:computerProgramming.sectionNumber student:bob.studentID assignment:quiz.assignmentID andGrade:@"8"];
+    [self.grades addObject:grade1];
+
+    [Persist saveArray:self.students toFile:@"students.plist"];
+    [Persist saveArray:self.courses toFile:@"courses.plist"];
+    [Persist saveArray:self.assignments toFile:@"assignments.plist"];
+    [Persist saveArray:self.grades toFile:@"grades.plist"];
 }
 
 #pragma mark - Table View
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.students.count;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     studentTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StudentCellID" forIndexPath:indexPath];
 
-    Student *student = [self.students objectAtIndex:indexPath.row];
+    //Student *student = [self.students objectAtIndex:indexPath.row];
 
-    cell.textLabel.text = student.lastName; //dammit!!! I'm stuck!!!!!!!!!
+    cell.textLabel.text = @"Current Name";
     cell.detailTextLabel.text = @"Current Grade";
     cell.assignmentTextField.text = @"10";
     return cell;

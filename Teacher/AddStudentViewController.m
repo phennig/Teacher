@@ -10,9 +10,9 @@
 #import "Student.h"
 
 @interface AddStudentViewController ()
-@property (strong, nonatomic) IBOutlet UITextField *newStudentFirstNameTextField;
-@property (strong, nonatomic) IBOutlet UITextField *newStudentLastNameTextField;
-@property (strong, nonatomic) IBOutlet UITextField *newStudentIDTextField;
+@property (strong, nonatomic) IBOutlet UITextField *nStudentFirstNameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *nStudentLastNameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *nStudentIDTextField;
 @property (strong, nonatomic) IBOutlet UITextField *courseTextField;
 
 @end
@@ -27,12 +27,11 @@
 - (IBAction)onAddButtonPressed:(id)sender
 {
 
-    NSString *first = self.newStudentFirstNameTextField.text;
-    NSString *last = self.newStudentLastNameTextField.text;
-    NSString *ID = self.newStudentIDTextField.text;
+    NSString *first = self.nStudentFirstNameTextField.text;
+    NSString *last = self.nStudentLastNameTextField.text;
+    NSString *ID = self.nStudentIDTextField.text;
 
-    //Student *newStudent = [[Student alloc] initWithFirstName: first LastName: last ID: ID];
-
+    self.nStudent = [[Student alloc] initWithFirstName: first LastName: last ID: ID];
 }
 
 @end

@@ -10,21 +10,15 @@
 
 @implementation Course
 
-- (Course *)initWithName:(NSString *)name andSection:(NSNumber *)section
+- (Course *)initWithName:(NSString *)name andSection:(NSString *)section
 {
     self = [super init];
     self.courseName = name;
     self.sectionNumber = section;
-    self.MAX_NUMBER_OF_STUDENTS = @24;
+    self.MAX_NUMBER_OF_STUDENTS = @"24";
     self.assignmentsInCourse = [[NSMutableArray alloc] init];
     self.studentsInCourse = [[NSMutableArray alloc] init];
 
-    return self;
-}
-
-- (Course *)initWithData:(NSData *)data
-{
-    //stuff here;
     return self;
 }
 
@@ -36,13 +30,6 @@
 - (void)addAssignmentsToCourse:(Assignment *)assignment
 {
     [self.assignmentsInCourse addObject:assignment];
-}
-
-- (NSData *)getData
-{
-    NSData *dataRepresentationOfCourse = [[NSData alloc] init];
-    //stuff here;
-    return dataRepresentationOfCourse;
 }
 
 @end

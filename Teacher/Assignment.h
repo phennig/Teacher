@@ -7,14 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Course.h"
 
 @interface Assignment : NSObject
 
 @property NSString *assignmentName;
-@property NSNumber *pointValue;
-@property NSNumber *assignmentID;
+@property NSString *pointValue;
+@property NSString *assignmentID;
 
-- (Assignment *)initWithName:(NSString *)name andPoints:(NSNumber *)points;
+- (Assignment *)initWithName:(NSString *)name andPoints:(NSString *)points;
 
 @end

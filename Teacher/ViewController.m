@@ -16,7 +16,7 @@
 #import "Persist.h"
 #import "Grade.h"
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *assignmentTextField;
 @property Course *currentCourse;
@@ -25,6 +25,7 @@
 @property NSMutableArray *courses;
 @property NSMutableArray *assignments;
 @property NSMutableArray *grades;
+@property (weak, nonatomic) IBOutlet UIPickerView *AssignmentPickerView;
 @end
 
 @implementation ViewController
@@ -47,6 +48,12 @@
 
     //self.assignmentTextField.text = self.currentAssignment.assignmentName;
 }
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    
+}
+
 
 #pragma mark - Table View
 
@@ -74,7 +81,6 @@
     return cell;
 }
 
-
 - (IBAction)unwindFromNewStudentViewController:(UIStoryboardSegue *)segue
 {
     AddStudentViewController *previousViewController = segue.sourceViewController;
@@ -96,6 +102,10 @@
     AddAssignmentViewController *previousViewController = segue.sourceViewController;
     Assignment *nAssignment = previousViewController.nAssignment;
     [self.currentCourse addAssignmentsToCourse:nAssignment];
+    [self.assignments addObject:nAssignment.getDictionaryVersion];
+    [Persist saveArray:self.assignments toFile:@"assignments.plist"];
+    [Persist saveArray:self.courses toFile:@"courses.plist"];
+
 }
 
 @end

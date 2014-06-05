@@ -29,10 +29,6 @@
 - (IBAction)onAddButtonPressed:(id)sender
 {
 
-    NSString *name = self.assignmentNameTextField.text;
-    NSString *points = self.pointValueTextField;  //need to convert
-
-    //Assignment *newAssignment = [[Assignment alloc] initWithName: name points: points];
 }
 
 @end

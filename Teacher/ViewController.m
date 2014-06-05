@@ -28,6 +28,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.students = [Persist load:@"students.plist"];
+    self.courses = [Persist load:@"courses.plist"];
+    self.assignments = [Persist load:@"assignments.plist"];
+    self.grades = [Persist load:@"grades.plist"];
+
+    self.currentCourse = [[Course alloc] initWithName:@"Computer Programming" andSection:@"001"];
 }
 
 #pragma mark - Table View

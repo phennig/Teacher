@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Assignment.h"
 
 @interface AddAssignmentViewController : UIViewController
-
+@property Assignment *nAssignment;
 @end

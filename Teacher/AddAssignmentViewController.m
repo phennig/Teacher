@@ -10,12 +10,10 @@
 
 @interface AddAssignmentViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *studentFirstNameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *studentLastNameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *studentIDTextField;
 @property (weak, nonatomic) IBOutlet UITextField *assignmentNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *pointValueTextField;
-
+@property (weak, nonatomic) IBOutlet UITextField *assignmentID;
+@property (weak, nonatomic) IBOutlet UIButton *addAssignmentButton;
 
 @end
 
@@ -25,12 +23,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
 }
 
-- (IBAction)onAddButtonPressed:(id)sender
+-(IBAction)addAssignmentButtonPressed:(UIButton *)sender
 {
+    NSString *assignment = self.assignmentNameTextField.text;
+    NSString *points = self.pointValueTextField.text;
+    NSString *assignmentID = self.assignmentNameTextField.text;
+    self.nAssignment = [[Assignment alloc] initWithName:assignment andPoints:points andID:assignmentID];
 
 }
+
 
 @end

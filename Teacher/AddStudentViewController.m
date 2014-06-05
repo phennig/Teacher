@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *nStudentLastNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nStudentIDTextField;
 @property (weak, nonatomic) IBOutlet UITextField *courseTextField;
+@property (weak, nonatomic) IBOutlet UIButton *addStudentButton;
 
 @end
 
@@ -24,8 +25,13 @@
     [super viewDidLoad];
 }
 
-- (IBAction)onAddButtonPressed:(id)sender
+-(IBAction)addStudentButtonPressed:(UIButton*)sender
 {
+    NSString *firstName = self.nStudentFirstNameTextField.text;
+    NSString *lastName = self.nStudentLastNameTextField.text;
+    NSString *ID = self.nStudentIDTextField.text;
+
+    self.nStudent = [[Student alloc] initWithFirstName:firstName LastName:lastName ID:ID];
 
 }
 

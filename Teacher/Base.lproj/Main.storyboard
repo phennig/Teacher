@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Pyd-02-Dvs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Pyd-02-Dvs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Add Assignment View Controller-->
         <scene sceneID="Q5g-cL-yRT">
             <objects>
-                <viewController id="cDZ-AQ-1Js" sceneMemberID="viewController">
+                <viewController id="cDZ-AQ-1Js" customClass="AddAssignmentViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5XO-gV-isG"/>
                         <viewControllerLayoutGuide type="bottom" id="f11-1f-Cr9"/>
@@ -15,11 +15,49 @@
                     <view key="view" contentMode="scaleToFill" id="epo-M3-NjK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Assignment Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yhp-w6-csb">
+                                <rect key="frame" x="12" y="133" width="145" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Point Value" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="63A-EI-KN4">
+                                <rect key="frame" x="160" y="133" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID Assignment" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3eq-vX-fNZ">
+                                <rect key="frame" x="238" y="133" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mV-9A-dny" userLabel="Button - Button - Add Assignment">
+                                <rect key="frame" x="12" y="95" width="113" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Assignment">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addAssignmentButtonPressed:" destination="cDZ-AQ-1Js" eventType="touchUpInside" id="UOx-hE-hnz"/>
+                                    <segue destination="N2N-qf-bGi" kind="unwind" unwindAction="unwindFromNewAssignmentViewController:" id="VFQ-hs-S4k"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="QGo-e5-IbF"/>
+                    <connections>
+                        <outlet property="addAssignmentButton" destination="1mV-9A-dny" id="vye-ih-oGi"/>
+                        <outlet property="assignmentID" destination="3eq-vX-fNZ" id="B26-Ll-VHO"/>
+                        <outlet property="assignmentNameTextField" destination="Yhp-w6-csb" id="gdp-du-ih0"/>
+                        <outlet property="pointValueTextField" destination="63A-EI-KN4" id="2F1-Lx-WPw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="auA-hH-flW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="N2N-qf-bGi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1119" y="-331"/>
         </scene>
@@ -126,10 +164,10 @@
             </objects>
             <point key="canvasLocation" x="576" y="74"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Student View Controller-->
         <scene sceneID="XuO-V2-qiI">
             <objects>
-                <viewController id="A1y-UO-igq" sceneMemberID="viewController">
+                <viewController id="A1y-UO-igq" customClass="AddStudentViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ygi-ph-pKv"/>
                         <viewControllerLayoutGuide type="bottom" id="YvD-nU-dmR"/>
@@ -137,18 +175,62 @@
                     <view key="view" contentMode="scaleToFill" id="JmT-El-Vs7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="61H-3y-ZTj" userLabel="Round Style Text Field - FirstName">
+                                <rect key="frame" x="182" y="144" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pKs-zH-eHA" userLabel="Round Style Text Field - LastName">
+                                <rect key="frame" x="14" y="144" width="160" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M7O-OJ-v9R" userLabel="Round Style Text Field - ID">
+                                <rect key="frame" x="203" y="106" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cUg-2h-zC7" userLabel="Round Style Text Field - Course">
+                                <rect key="frame" x="14" y="106" width="181" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leV-nq-5DG">
+                                <rect key="frame" x="20" y="68" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Student">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addStudentButtonPressed:" destination="A1y-UO-igq" eventType="touchUpInside" id="0PV-ai-Req"/>
+                                    <segue destination="knI-tY-yo9" kind="unwind" unwindAction="unwindFromNewStudentViewController:" id="p4i-82-LFY"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="v71-xf-otd"/>
+                    <connections>
+                        <outlet property="addStudentButton" destination="leV-nq-5DG" id="7mZ-2i-YR3"/>
+                        <outlet property="courseTextField" destination="cUg-2h-zC7" id="r9r-YA-oWc"/>
+                        <outlet property="nStudentFirstNameTextField" destination="61H-3y-ZTj" id="hkx-Xz-mLX"/>
+                        <outlet property="nStudentIDTextField" destination="M7O-OJ-v9R" id="ed0-1H-uAT"/>
+                        <outlet property="nStudentLastNameTextField" destination="pKs-zH-eHA" id="HhG-Tu-eSy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ld0-70-UyE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="knI-tY-yo9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1119" y="418"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KZW-rM-5au">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hJ6-ag-ow0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pyd-02-Dvs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="f1u-5E-FYZ">
@@ -160,6 +242,7 @@
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="fne-fv-2of"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hJ6-ag-ow0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="99" y="74"/>
         </scene>

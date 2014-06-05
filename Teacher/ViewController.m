@@ -9,8 +9,9 @@
 #import "ViewController.h"
 #import "studentTableCell.h"
 #import "AddStudentViewController.h"
-//#import "AddAssignmentViewController.h"
+#import "AddAssignmentViewController.h"
 #import "Student.h"
+#import "Assignment.h"
 #import "Course.h"
 #import "Persist.h"
 
@@ -62,12 +63,12 @@
     Student *newStudent = previousViewController.nStudent;
     [self.currentCourse addStudentToCourse:newStudent];
 }
-/*
+
 - (IBAction)unwindFromNewAssignmentViewController:(UIStoryboardSegue *)segue
 {
     AddAssignmentViewController *previousViewController = segue.sourceViewController;
-    Assignment *newAssignment = previousViewController.newAssignment;
-    [self.currentCourse addAssignmentToCourse:newAssignment];
+    Assignment *nAssignment = previousViewController.nAssignment;
+    [self.currentCourse addAssignmentsToCourse:nAssignment];
 }
-*/
+
 @end

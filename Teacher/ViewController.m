@@ -33,18 +33,27 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.students.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     studentTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StudentCellID" forIndexPath:indexPath];
 
-    cell.textLabel.text = @"Custom Class";
+    Student *student = [self.students objectAtIndex:indexPath.row];
+
+    cell.textLabel.text = student.lastName; //dammit!!! I'm stuck!!!!!!!!!
     cell.detailTextLabel.text = @"Current Grade";
     cell.assignmentTextField.text = @"10";
     return cell;
 }
+
+//MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
+//
+//cell.textLabel.text = creature.name;
+//cell.detailTextLabel.text = creature.description;
+//return cell;
+
 
 - (IBAction)unwindFromNewStudentViewController:(UIStoryboardSegue *)segue
 {

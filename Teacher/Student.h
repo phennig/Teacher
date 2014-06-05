@@ -11,8 +11,11 @@
 @interface Student : NSObject
 @property NSString *firstName;
 @property NSString *lastName;
-@property NSInteger *studentID;
+@property NSString *studentID;
 
-- (NSString *)getLastCommaFirst;
+- (Student *)initWithFirstName:(NSString *)first LastName:(NSString *)last ID:(NSString *)studentID;
+- (Student *)initWithDictionary:(NSDictionary *)dictionary;
+- (NSString *)getLastCommaFirstandID;
+- (NSDictionary *)getDictionaryVersion;
 
 @end

@@ -8,11 +8,19 @@
 
 #import "ViewController.h"
 #import "studentTableCell.h"
+#import "AddStudentViewController.h"
+//#import "AddAssignmentViewController.h"
+#import "Student.h"
+#import "Course.h"
+#import "Persist.h"
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate, UITabBarDelegate, UITabBarControllerDelegate>
-
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *assignmentTextField;
+@property Course *currentCourse;
 @property NSMutableArray *students;
+@property NSMutableArray *courses;
+@property NSMutableArray *assignments;
+@property NSMutableArray *grades;
 @end
 
 @implementation ViewController
@@ -26,17 +34,34 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.students.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     studentTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StudentCellID" forIndexPath:indexPath];
 
-    cell.textLabel.text = @"Name will be here";
+    Student *student = [self.students objectAtIndex:indexPath.row];
+
+    cell.textLabel.text = student.lastName; //dammit!!! I'm stuck!!!!!!!!!
     cell.detailTextLabel.text = @"Current Grade";
     cell.assignmentTextField.text = @"10";
     return cell;
 }
 
+
+- (IBAction)unwindFromNewStudentViewController:(UIStoryboardSegue *)segue
+{
+    AddStudentViewController *previousViewController = segue.sourceViewController;
+    Student *newStudent = previousViewController.nStudent;
+    [self.currentCourse addStudentToCourse:newStudent];
+}
+/*
+- (IBAction)unwindFromNewAssignmentViewController:(UIStoryboardSegue *)segue
+{
+    AddAssignmentViewController *previousViewController = segue.sourceViewController;
+    Assignment *newAssignment = previousViewController.newAssignment;
+    [self.currentCourse addAssignmentToCourse:newAssignment];
+}
+*/
 @end

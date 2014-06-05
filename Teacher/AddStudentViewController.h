@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Student.h"
 
 @interface AddStudentViewController : UIViewController
-
+@property Student *nStudent;
 @end

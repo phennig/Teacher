@@ -9,11 +9,11 @@
 #import "AddAssignmentViewController.h"
 
 @interface AddAssignmentViewController ()
-@property (strong, nonatomic) UITextField *studentFirstNameTextField;
-@property (strong, nonatomic) UITextField *studentLastNameTextField;
-@property (strong, nonatomic) UITextField *studentIDTextField;
-@property (strong, nonatomic) UITextField *assignmentNameTextField;
-@property (strong, nonatomic) UITextField *pointValueTextField;
+@property (weak, nonatomic) UITextField *studentFirstNameTextField;
+@property (weak, nonatomic) UITextField *studentLastNameTextField;
+@property (weak, nonatomic) UITextField *studentIDTextField;
+@property (weak, nonatomic) UITextField *assignmentNameTextField;
+@property (weak, nonatomic) UITextField *pointValueTextField;
 
 @end
 

@@ -13,10 +13,12 @@
 #import "Student.h"
 #import "Course.h"
 #import "Persist.h"
+#import "Grade.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *assignmentTextField;
 @property Course *currentCourse;
+@property Assignment *currentAssignment;
 @property NSMutableArray *students;
 @property NSMutableArray *courses;
 @property NSMutableArray *assignments;
@@ -53,6 +55,8 @@
     [Persist saveArray:self.grades toFile:@"grades.plist"];
 
     self.currentCourse = computerProgramming;
+    self.currentAssignment = quiz;
+    self.assignmentTextField.text = self.currentAssignment.assignmentName;
 }
 
 #pragma mark - Table View
@@ -67,6 +71,12 @@
     studentTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StudentCellID" forIndexPath:indexPath];
 
     Student *student = [self.currentCourse.studentsInCourse objectAtIndex:indexPath.row];
+
+    NSString *studentID = student.studentID;
+    NSString *assignmentId = self.currentAssignment.assignmentID;
+    NSString *curentSectionId = self.currentCourse.sectionNumber;
+
+    //student id, current assignmentid, current sectionid
 
     cell.textLabel.text = student.getLastCommaFirstandID;
     cell.detailTextLabel.text = @"Current Grade";

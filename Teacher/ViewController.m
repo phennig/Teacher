@@ -8,10 +8,15 @@
 
 #import "ViewController.h"
 #import "studentTableCell.h"
+#import "AddStudentViewController.h"
+//#import "AddAssignmentViewController.h"
+#import "Student.h"
+#import "Course.h"
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate, UITabBarDelegate, UITabBarControllerDelegate>
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *assignmentTextField;
+@property Course *currentCourse;
 @property NSMutableArray *students;
 @end
 
@@ -20,7 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.currentCourse = [[Course alloc] initWithName:@"Computer Programming" andSection:@"001"];
 
 }
 
@@ -41,4 +46,18 @@
     return cell;
 }
 
+- (IBAction)unwindFromNewStudentViewController:(UIStoryboardSegue *)segue
+{
+    AddStudentViewController *previousViewController = segue.sourceViewController;
+    Student *nStudent = previousViewController.nStudent;
+    [self.currentCourse addStudentToCourse:nStudent];
+}
+/*
+- (IBAction)unwindFromNewAssignmentViewController:(UIStoryboardSegue *)segue
+{
+    AddAssignmentViewController *previousViewController = segue.sourceViewController;
+    Assignment *newAssignment = previousViewController.newAssignment;
+    [self.currentCourse addAssignmentToCourse:newAssignment];
+}
+*/
 @end

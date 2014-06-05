@@ -7,8 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Course.h"
-#import "Assignment.h"
 
 @interface Student : NSObject
 @property NSString *firstName;

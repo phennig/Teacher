@@ -40,7 +40,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.students.count;
+    return self.currentCourse.studentsInCourse.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -52,7 +52,8 @@
     cell.textLabel.text = student.lastName;
     cell.detailTextLabel.text = @"Current Grade";
     cell.assignmentTextField.text = @"10";
-    [cell getLast
+    //[cell
+
     return cell;
 }
 

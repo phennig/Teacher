@@ -34,8 +34,12 @@
     self.courseName = [dictionary objectForKey:@"courseName"];
     self.sectionNumber = [dictionary objectForKey:@"sectionID"];
     self.MAX_NUMBER_OF_STUDENTS = [dictionary objectForKey:@"maxStudents"];
+
+    //NSMutableArray *students = [dictionary objectForKey:@"students"];
+
+
     self.assignmentsInCourse = [dictionary objectForKey:@"assignments"];
-    self.studentsInCourse = [dictionary objectForKey:@"students"];
+
 
     return self;
 }
@@ -71,7 +75,6 @@
                                                                                     self.MAX_NUMBER_OF_STUDENTS,@"maxStudents",
                                                                                     assignments,@"assignments",
                                                                                     students,@"students", nil];
-    NSLog(@"%@",currentDictionary);
     return currentDictionary;
 }
 

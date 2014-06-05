@@ -42,7 +42,8 @@
 
     self.currentCourse = [[Course alloc] initWithDictionary:[self.courses firstObject]];
 
-    self.currentAssignment = [self.currentCourse.assignmentsInCourse firstObject];
+
+    //self.currentAssignment = [self.currentCourse.assignmentsInCourse firstObject];
 
     //self.assignmentTextField.text = self.currentAssignment.assignmentName;
 }
@@ -78,12 +79,16 @@
 {
     AddStudentViewController *previousViewController = segue.sourceViewController;
     Student *newStudent = previousViewController.nStudent;
-    [self.currentCourse addStudentToCourse:newStudent];
+
     [self.students addObject:newStudent.getDictionaryVersion];
     [Persist saveArray:self.students toFile:@"students.plist"];
+
+    [self.currentCourse addStudentToCourse:newStudent];
+    [self.courses removeAllObjects];
+    [self.courses addObject:self.currentCourse.getDictionaryVersion];
     [Persist saveArray:self.courses toFile:@"courses.plist"];
-    [self.tableView reloadData];
-    
+
+    [self.tableView reloadData];    
 }
 
 - (IBAction)unwindFromNewAssignmentViewController:(UIStoryboardSegue *)segue

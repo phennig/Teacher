@@ -34,12 +34,22 @@
     self.courseName = [dictionary objectForKey:@"courseName"];
     self.sectionNumber = [dictionary objectForKey:@"sectionID"];
     self.MAX_NUMBER_OF_STUDENTS = [dictionary objectForKey:@"maxStudents"];
+    self.studentsInCourse = [[NSMutableArray alloc] init];
+    self.assignmentsInCourse = [[NSMutableArray alloc] init];
 
-    //NSMutableArray *students = [dictionary objectForKey:@"students"];
-
-
-    self.assignmentsInCourse = [dictionary objectForKey:@"assignments"];
-
+    NSMutableArray *students = [dictionary objectForKey:@"students"];
+    for(NSDictionary *temp in students)
+    {
+        Student *s = [[Student alloc] initWithDictionary:temp];
+        [self.studentsInCourse addObject:s];
+    }
+    
+    NSMutableArray *assignments = [dictionary objectForKey:@"assignments"];
+    for(NSDictionary *temp in assignments)
+    {
+        Assignment *a = [[Assignment alloc] initWithDictionary:temp];
+        [self.assignmentsInCourse addObject:a];
+    }
 
     return self;
 }

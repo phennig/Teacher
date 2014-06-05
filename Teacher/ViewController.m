@@ -49,9 +49,10 @@
 
     Student *student = [self.students objectAtIndex:indexPath.row];
 
-    cell.textLabel.text = student.lastName; //dammit!!! I'm stuck!!!!!!!!!
+    cell.textLabel.text = student.lastName;
     cell.detailTextLabel.text = @"Current Grade";
     cell.assignmentTextField.text = @"10";
+    [cell getLast
     return cell;
 }
 

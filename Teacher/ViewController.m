@@ -17,6 +17,7 @@
 #import "Grade.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *assignmentTextField;
 @property Course *currentCourse;
 @property Assignment *currentAssignment;
@@ -31,34 +32,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.currentCourse = [[Course alloc] init];
+    self.currentAssignment = [[Assignment alloc] init];
+
     self.students = [Persist load:@"students.plist"];
     self.courses = [Persist load:@"courses.plist"];
     self.assignments = [Persist load:@"assignments.plist"];
     self.grades = [Persist load:@"grades.plist"];
 
-    Student *bob = [[Student alloc] initWithFirstName:@"Bob" LastName:@"Brown" ID:@"1"];
-    [self.students addObject:bob.getDictionaryVersion];
+    self.currentCourse = [[Course alloc] initWithDictionary:[self.courses firstObject]];
 
-    Assignment *quiz = [[Assignment alloc] initWithName:@"Quiz 1" andPoints:@"10" andID:@"Q1"];
-    [self.assignments addObject:quiz.getDictionaryVersion];
+    self.currentAssignment = [self.currentCourse.assignmentsInCourse firstObject];
 
-    Course *computerProgramming = [[Course alloc] initWithName:@"Computer Programming" andSection:@"001"];
-    [computerProgramming addStudentToCourse:bob];
-    [computerProgramming addAssignmentsToCourse:quiz];
-    [self.courses addObject:computerProgramming.getDictionaryVersion];
-
-    Grade *grade1 = [[Grade alloc] initWithSection:computerProgramming.sectionNumber student:bob.studentID assignment:quiz.assignmentID andGrade:@"8"];
-    [self.grades addObject:grade1.getDictionaryVersion];
-
-
-    [Persist saveArray:self.students toFile:@"students.plist"];
-    [Persist saveArray:self.courses toFile:@"courses.plist"];
-    [Persist saveArray:self.assignments toFile:@"assignments.plist"];
-    [Persist saveArray:self.grades toFile:@"grades.plist"];
-
-    self.currentCourse = computerProgramming;
-    self.currentAssignment = quiz;
-    self.assignmentTextField.text = self.currentAssignment.assignmentName;
+    //self.assignmentTextField.text = self.currentAssignment.assignmentName;
 }
 
 #pragma mark - Table View
@@ -74,9 +60,9 @@
 
     Student *student = [self.currentCourse.studentsInCourse objectAtIndex:indexPath.row];
 
-    NSString *studentID = student.studentID;
-    NSString *assignmentId = self.currentAssignment.assignmentID;
-    NSString *curentSectionId = self.currentCourse.sectionNumber;
+    //NSString *studentID = student.studentID;
+    //NSString *assignmentId = self.currentAssignment.assignmentID;
+    //NSString *curentSectionId = self.currentCourse.sectionNumber;
 
     //student id, current assignmentid, current sectionid
 
@@ -93,6 +79,11 @@
     AddStudentViewController *previousViewController = segue.sourceViewController;
     Student *newStudent = previousViewController.nStudent;
     [self.currentCourse addStudentToCourse:newStudent];
+    [self.students addObject:newStudent.getDictionaryVersion];
+    [Persist saveArray:self.students toFile:@"students.plist"];
+    [Persist saveArray:self.courses toFile:@"courses.plist"];
+    [self.tableView reloadData];
+    
 }
 
 - (IBAction)unwindFromNewAssignmentViewController:(UIStoryboardSegue *)segue

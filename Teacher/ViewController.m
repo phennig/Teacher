@@ -91,6 +91,7 @@
     AddAssignmentViewController *previousViewController = segue.sourceViewController;
     Assignment *nAssignment = previousViewController.nAssignment;
     [self.currentCourse addAssignmentsToCourse:nAssignment];
+
 }
 
 @end

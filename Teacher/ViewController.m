@@ -48,12 +48,6 @@
     return cell;
 }
 
-//MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
-//
-//cell.textLabel.text = creature.name;
-//cell.detailTextLabel.text = creature.description;
-//return cell;
-
 
 - (IBAction)unwindFromNewStudentViewController:(UIStoryboardSegue *)segue
 {

@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "studentTableCell.h"
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UITabBarDelegate, UITabBarControllerDelegate>
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate, UITabBarDelegate, UITabBarControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *assignmentTextField;
 @property NSMutableArray *students;
@@ -27,12 +28,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.students.count;
+    return 10;
 }
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return cell;
-//}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    studentTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StudentCellID" forIndexPath:indexPath];
+
+    cell.textLabel.text = @"Name will be here";
+    cell.detailTextLabel.text = @"Current Grade";
+    cell.assignmentTextField.text = @"10";
+    return cell;
+}
 
 @end

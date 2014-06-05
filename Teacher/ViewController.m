@@ -42,10 +42,10 @@
     Course *computerProgramming = [[Course alloc] initWithName:@"Computer Programming" andSection:@"001"];
     [computerProgramming addStudentToCourse:bob];
     [computerProgramming addAssignmentsToCourse:quiz];
-    [self.courses addObject:computerProgramming];
+    [self.courses addObject:computerProgramming.getDictionaryVersion];
 
     Grade *grade1 = [[Grade alloc] initWithSection:computerProgramming.sectionNumber student:bob.studentID assignment:quiz.assignmentID andGrade:@"8"];
-    [self.grades addObject:grade1];
+    [self.grades addObject:grade1.getDictionaryVersion];
 
     [Persist saveArray:self.students toFile:@"students.plist"];
     [Persist saveArray:self.courses toFile:@"courses.plist"];
@@ -59,19 +59,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.currentCourse.studentsInCourse.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     studentTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StudentCellID" forIndexPath:indexPath];
 
-    //Student *student = [self.students objectAtIndex:indexPath.row];
+    Student *student = [self.currentCourse.studentsInCourse objectAtIndex:indexPath.row];
 
-    cell.textLabel.text = @"Current Name";
+    cell.textLabel.text = student.getLastCommaFirstandID;
     cell.detailTextLabel.text = @"Current Grade";
-    cell.assignmentTextField.text = @"10";
-    //[cell
+    cell.assignmentTextField.text = @"";
 
     return cell;
 }
